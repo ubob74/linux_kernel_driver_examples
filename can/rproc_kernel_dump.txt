@@ -1,0 +1,63 @@
+copyTask 50: Entered...:
+[   10.724487] omap-rproc omap-rproc.1: mbox msg: 0xffffff04
+[   10.731842] omap-rproc omap-rproc.1: received echo reply from ipu_c0
+[   10.741394] omap-rproc omap-rproc.1: mbox msg: 0x0
+[   10.748535] omap-rproc omap-rproc.1: _vq_interrupt_thread
+[   10.755432] rproc remoteproc0: vq index 0 is interrupted
+[   10.766265] virtio_rpmsg_bus virtio0: From: 0x32, To: 0x35, Len: 40, Flags: 0, Reserved: 0
+[   10.775177] rpmsg_virtio RX: 32 00 00 00 35 00 00 00 00 00 00 00 28 00 00 00  2...5.......(...
+[   10.785308] rpmsg_virtio RX: 66 75 63 6b 69 74 2d 61 6c 6c 00 00 00 00 00 00  fuckit-all......
+[   10.807159] rpmsg_virtio RX: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+[   10.822784] rpmsg_virtio RX: 32 00 00 00 00 00 00 00                          2.......
+[   10.833770] virtio_rpmsg_bus virtio0: creating channel fuckit-all addr 0x32
+[   11.778045] tsl2771_read_als:cdata is NULL
+[   11.785095] tsl2771_read_als:cdata is NULL
+[   13.326995] ADDRCONF(NETDEV_UP): eth0: link is not ready
+[   82.609771] acc_open
+[   82.612243] acc_release
+[   84.473632] mtp_open
+[   85.215637] init: sys_prop: permission denied uid:1003  name:service.bootanim.exit
+[   85.307067] init: Boot Animation exit
+[  145.097381] request_suspend_state: sleep (3->3) at 145087103372 (2000-01-10 01:10:17.109123715 UTC)
+[  145.108367] DSSCOMP: dsscomp_early_suspend
+[  145.124145] DSSCOMP: blanked screen
+
+shell@android:/ $ 
+shell@android:/ $ su -
+shell@android:/ # 
+shell@android:/ # 
+shell@android:/ # cd system/vendor/firmware/                                   
+shell@android:/system/vendor/firmware # 
+shell@android:/system/vendor/firmware # 
+shell@android:/system/vendor/firmware # ll
+-rw-r--r-- root     root     13486985 2012-11-27 03:41 ducati-m3-core0.xem3
+lrw-r--r-- root     root              2012-11-27 02:16 hdcp.keys -> /factory/hdcp.keys
+-rw-rw-rw- root     root        45232 2013-03-27 15:22 rpmsg_test.ko
+-rw-rw-rw- root     root      5850268 2013-04-05 12:13 test_omx_ipu.xem3
+shell@android:/system/vendor/firmware # 
+shell@android:/system/vendor/firmware # 
+shell@android:/system/vendor/firmware # 
+nsmod rpmsg_test.ko                                                           <
+[  241.146972] rpmsg_test rpmsg0: rpmsg_probe
+[  241.151733] rpmsg_test rpmsg0: TX From 0x400, To 0x32, Len 5, Flags 0, Reserved 0
+[  241.159973] rpmsg_virtio TX: 00 04 00 00 32 00 00 00 00 00 00 00 05 00 00 00  ....2...........
+[  241.169586] rpmsg_virtio TX: 68 65 6c 6c 6f                                   hello
+[  241.177886] rproc remoteproc0: kicking vq index: 1
+[  241.183074] omap-rproc omap-rproc.1: omap_rproc_kick: ENTER
+[  241.189117] omap-rproc omap-rproc.1: omap_mbox_msg_send OK: 0
+[  241.189239] omap-rproc omap-rproc.1: mbox msg: 0x1
+[  241.189331] omap-rproc omap-rproc.1: mbox msg: 0x0
+[  241.189392] omap-rproc omap-rproc.1: _vq_interrupt_thread
+[  241.189422] rproc remoteproc0: vq index 1 is interrupted
+[  241.189422] virtio_rpmsg_bus virtio0: rpmsg_xmit_done
+[  241.189544] omap-rproc omap-rproc.1: _vq_interrupt_thread
+[  241.189544] rproc remoteproc0: vq index 0 is interrupted
+[  241.189575] virtio_rpmsg_bus virtio0: From: 0x32, To: 0x400, Len: 5, Flags: 0, Reserved: 0
+[  241.189575] rpmsg_virtio RX: 32 00 00 00 00 04 00 00 00 00 00 00 05 00 00 00  2...............
+[  241.189605] rpmsg_virtio RX: 68 65 6c 6c 6f                                   hello
+[  241.189605] rpmsg_test rpmsg0: message from 50 and len=5
+[  241.266296] omap-rproc omap-rproc.1: omap_rproc_kick: EXIT
+shell@android:/system/vendor/firmware # 
+shell@android:/system/vendor/firmware # 
+shell@android:/system/vendor/firmware # 
+
